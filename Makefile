@@ -9,6 +9,7 @@ SRC = pulseaudio-subscribe.cpp
 all : $(BIN)
 
 install : $(BIN)
+	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	cp -f $(BIN) $(DESTDIR)$(PREFIX)/bin/$(BIN)
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/$(BIN)
 
