@@ -6,14 +6,14 @@ SRC = pulseaudio-subscribe.cpp
 .PHONY: all install clean
 .POSIX:
 
-all : $(NAME)
+all : $(BIN)
 
 install : $(BIN)
-	cp -fv $(BIN) $(PREFIX)/bin/$(BIN)
-	chmod a+x $(PREFIX)/bin/$(BIN)
+	cp -f $(BIN) $(DESTDIR)$(PREFIX)/bin/$(BIN)
+	chmod 755 $(DESTDIR)$(PREFIX)/bin/$(BIN)
 
 clean :
-	rm -fv $(BIN)
+	rm -f $(BIN)
 
 $(BIN) : $(SRC)
 	g++ $(shell pkg-config libpulse --cflags --libs) $(SRC) -o $(BIN)
