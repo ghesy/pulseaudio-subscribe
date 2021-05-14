@@ -9,13 +9,16 @@ stuff like dwmblocks and dwmBar.
 
 ## install
 
-install: `./install.sh`.
-remove: `sudo rm /usr/local/bin/xkblayout-subscribe`.
+arch users can use the AUR package: `paru -S pulseaudio-subscribe-git`
+
+install: `make; sudo make install`
+
+uninstall: `sudo make uninstall`
 
 ## example usage
 
-this command shows a desktop notification upon any
-change to pulseaudio's state:
+this command shows a desktop notification upon
+change of pulseaudio's state (change of volume, default sink, etc.):
 
 ```sh
 pulseaudio-subscribe | xargs -L1 notify-send
